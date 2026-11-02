@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "key_features",
+        "product_name",
+        "target_audience"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "You are a marketing copywriter.\nWrite a short product description for:\n- Product: {product_name}\n- Target audience: {target_audience}\n- Key features: {key_features}\nKeep it under 50 words and make it engaging.",
+    "template_format": "f-string",
+    "validate_template": false,
+    "_type": "prompt"
+}
