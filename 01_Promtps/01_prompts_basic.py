@@ -1,0 +1,33 @@
+from langchain_openai import ChatOpenAI
+from dotenv import load_dotenv
+from langchain_core.prompts import PromptTemplate
+
+import streamlit as st
+
+load_dotenv()
+model = ChatOpenAI(model='gpt-5-nano', reasoning_effort='minimal', max_completion_tokens=700)
+
+template = PromptTemplate(
+    template="""You are a marketing copywriter.
+Write a short product description for:
+- Product: {product_name}
+- Target audience: {target_audience}
+- Key features: {key_features}
+Keep it under 50 words and make it engaging.""",
+    input_variables=['product_name', 'target_audience', 'key_features']
+)
+
+st.header("Research Assistant")
+
+product_name = st.selectbox("Enter product name", ['Laptop', 'Mobile', 'Electronic', 'Keyboard'])
+target_audience = st.text_input("Target audience name")
+key_features = st.text_input("Key Features")
+
+if st.button('Send'):
+    prompt = template.invoke({
+        'product_name': product_name,
+        'target_audience': target_audience,
+        'key_features': key_features
+    })
+    result = model.invoke(prompt)
+    st.write(result.content)
