@@ -1,0 +1,16 @@
+# Environments
+.venv/
+venv/
+env/
+
+# Secrets and API Keys
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Hugging Face Cache
+.cache/
