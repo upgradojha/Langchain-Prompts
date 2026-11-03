@@ -5,7 +5,7 @@
         "product_name",
         "target_audience"
     ],
-    "optional_variables": [],
+    "optional_variables": [], # we can add some optional variable also 
     "output_parser": null,
     "partial_variables": {},
     "metadata": null,
